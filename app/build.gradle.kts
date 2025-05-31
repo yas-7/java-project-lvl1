@@ -1,10 +1,19 @@
 plugins {
     id("com.github.ben-manes.versions") version "0.52.0"
+    id("org.sonarqube") version "6.2.0.5505"
     application
 }
 
 application {
     mainClass = "hexlet.code.App"
+}
+
+sonar {
+    properties {
+        property("sonar.projectKey", "yas-7_java-project-lvl1")
+        property("sonar.organization", "yas-7")
+        property("sonar.host.url", "https://sonarcloud.io")
+    }
 }
 
 tasks.getByName("run", JavaExec::class) {
