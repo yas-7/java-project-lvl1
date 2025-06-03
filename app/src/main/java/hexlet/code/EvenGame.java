@@ -16,13 +16,13 @@ public class EvenGame {
 
         for (int i = 0; i < numberOfIteration; i++) {
             int value = random.nextInt(bound);
-            System.out.printf("Question: %d \n", value);
+            System.out.printf("Question: %d %n", value);
             System.out.print("Your answer: ");
             String answer = scanner.nextLine();
             var correctAnswer = isEven(value) ? "yes" : "no";
 
             if (!answer.equals(correctAnswer)) {
-                System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\n", answer, correctAnswer);
+                System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.%n", answer, correctAnswer);
                 System.out.printf("Let's try again, %s!", name);
                 return;
             }

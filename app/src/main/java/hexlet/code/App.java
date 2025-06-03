@@ -22,7 +22,7 @@ public class App {
         Cli.greet();
         System.out.print("May I have your name? ");
         String name = scanner.nextLine();
-        System.out.printf("Hello, %s!\n", name);
+        System.out.printf("Hello, %s!%n", name);
 
         switch (number) {
             case 2:
