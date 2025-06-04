@@ -1,37 +1,38 @@
 package hexlet.code;
 
-import java.util.Scanner;
+import hexlet.code.games.Calc;
+import hexlet.code.games.Even;
+import static hexlet.code.Utils.SCANNER;
 
 public class App {
     public static void main(String[] args) {
-        System.out.println("Please enter the game number and press Enter.");
-        System.out.println("1 - Greet");
-        System.out.println("2 - Even");
-        System.out.println("0 - Exit");
+        System.out.println("""
+                Please enter the game number and press Enter.
+                1 - Greet
+                2 - Even
+                3 - Calc
+                0 - Exit
+               """);
 
-        Scanner scanner = new Scanner(System.in);
         System.out.print("Your choice: ");
-        int number = scanner.nextInt();
-        scanner.nextLine();
+        int gameNumber = SCANNER.nextInt();
+        SCANNER.nextLine();
         System.out.println();
 
-        if (number < 1 || number > 2) {
-            return;
-        }
-
-        Cli.greet();
-        System.out.print("May I have your name? ");
-        String name = scanner.nextLine();
-        System.out.printf("Hello, %s!%n", name);
-
-        switch (number) {
+        switch (gameNumber) {
+            case 1:
+                Engine.greetUser();
+                break;
             case 2:
-                EvenGame.run(name);
+                Even.init();
+                break;
+            case 3:
+                Calc.init();
                 break;
             default:
-                break;
+                System.out.println("Ошибка! Неверное значение для игры.");
         }
 
-        scanner.close();
+        SCANNER.close();
     }
 }
