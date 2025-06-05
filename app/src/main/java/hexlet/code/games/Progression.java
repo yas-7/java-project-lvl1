@@ -7,14 +7,14 @@ import static hexlet.code.Utils.BOUND;
 import static hexlet.code.Utils.NUMBER_OF_ITERATIONS;
 
 public class Progression {
+    private static final int MIN_LENGTH = 5;
+    private static final int MAX_LENGTH = 11;
+    private static final int STEP_BOUND = 10;
 
     private static int[] generateProgression() {
-        int minLength = 5;
-        int maxLength = 11;
-        int stepBound = 10;
-        int arrayLength = RANDOM.nextInt(minLength, maxLength);
+        int arrayLength = RANDOM.nextInt(MIN_LENGTH, MAX_LENGTH);
         int firstElement = RANDOM.nextInt(BOUND);
-        int step = RANDOM.nextInt(1, stepBound);
+        int step = RANDOM.nextInt(1, STEP_BOUND);
         int[] array = new int[arrayLength];
 
         for (int i = 0; i < arrayLength; i++) {
