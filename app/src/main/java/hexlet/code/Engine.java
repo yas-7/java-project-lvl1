@@ -5,7 +5,7 @@ import static hexlet.code.Utils.SCANNER;
 
 public class Engine {
 
-    public static String userName;
+    private static String userName;
 
     public static void greetUser() {
         System.out.println("Welcome to the Brain Games!");

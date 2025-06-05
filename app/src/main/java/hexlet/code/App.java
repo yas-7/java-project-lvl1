@@ -4,6 +4,7 @@ import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
 
 import static hexlet.code.Utils.SCANNER;
 
@@ -16,8 +17,8 @@ public class App {
                 3 - Calc
                 4 - GCD
                 5 - Progression
-                0 - Exit
-               """);
+                6 - Prime
+                0 - Exit""");
 
         System.out.print("Your choice: ");
         int gameNumber = SCANNER.nextInt();
@@ -25,6 +26,8 @@ public class App {
         System.out.println();
 
         switch (gameNumber) {
+            case 0:
+                break;
             case 1:
                 Engine.greetUser();
                 break;
@@ -39,6 +42,9 @@ public class App {
                 break;
             case 5:
                 Progression.init();
+                break;
+            case 6:
+                Prime.init();
                 break;
             default:
                 System.out.println("Ошибка! Неверное значение для игры.");
